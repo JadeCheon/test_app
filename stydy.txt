@@ -1,0 +1,47 @@
+Ruby on Rails
+=================
+
+설치
+------
+http://railsinstall.org 에서 다운받아 설치
+
+프로젝트 생성
+------------
+> rails new new project_name
+
+DB 설정
+-----------
+- 설정파일 : config/database.yml
+- ex : MySQL
+    development:
+    adapter: mysql2
+    encoding: utf8
+    database: blog_development
+    pool: 5
+    username: root
+    password:
+    socket: /tmp/mysql.sock
+- DB 생성 : rake db:create
+
+Server Start
+-----------------
+- 해당 폴더로 들어가 다음 실행
+> rails server 
+또는
+> rails s
+
+Controller 생성
+-------------------
+> rails generate controller home index
+ - app/controllers/home_controller.rb 생성
+ - config/routes.rb 에 해당 controller 등록
+ - app/helpers/home_helper.rb 생성
+ - app/views/home 폴더 생성
+ - app/views/home/index.html.erb 파일 생성 
+ - test/functional/home_controller_test.rb 생성
+
+Scaffold(발판) 만들기 
+---------------------
+ex) Post scaffold 만들기
+> rails generate scaffold Post name:string title:string content:text
+ - 
